@@ -10,6 +10,8 @@ fail2ban用于监视系统日志，通过正则表达式匹配错误错误信息
  在笔者的vps里，主要是用于ssh的保护，ssh登录错误的时候会记录到 **/var/log/secure**，fail2ban通过 gamin检测到新增日志，10min内同一ip连续登陆5次就会封禁30min。  
  当然，一个足够的强密码也是必须的！
 
+<!-- more -->
+
 官方主页：[http://www.fail2ban.org/wiki/index.php/Main_Page](http://www.fail2ban.org/wiki/index.php/Main_Page)
 
 github：[https://github.com/fail2ban/fail2ban](https://github.com/fail2ban/fail2ban)

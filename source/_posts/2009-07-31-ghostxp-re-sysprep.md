@@ -9,7 +9,7 @@ tags:
 　　母盘使用donghai老师最新可以信任的版本GhostXP_SP3电脑公司特别版_v9.2   
 　　donghai老师是我的第一位封装老师，现在他可以确信的作品不明，这个算是一个怀念吧 
 
-<ignore_js_op>
+<!-- more -->
 
 {% asset_img sysprep_01.jpg sysprep_01 %}
 

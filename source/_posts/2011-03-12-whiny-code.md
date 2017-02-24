@@ -8,6 +8,9 @@ tags:
 好吧，我不是来咆哮的  
 写了一天代码，头晕晕  
 求bug  
+
+<!-- more -->
+
 ```
 #NoTrayIcon
 #Region ;**** 参数创建于 ACNWrapper_GUI ****
