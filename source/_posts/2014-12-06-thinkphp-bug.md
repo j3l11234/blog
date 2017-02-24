@@ -5,6 +5,7 @@ updated: 2014-12-06 18:06:44
 tags:
 ---
 　　前几天弄项目发现这个问题，在模版文件中，`$apply`是一个数组，但是总是匹配不上。  
+<!-- more -->
 　　模版的代码如下:
 ```PHP
 <if condition="$plist.name eq $apply.plan_province">

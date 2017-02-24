@@ -6,8 +6,8 @@ tags:
 ---
 >　　真的就是手痒才更新到2的...
 
-##更新
-***
+## 更新
+
 　　写此文时，webpack更新到2.1.0-beta.27。
 
 首先运行更新命令：    
@@ -17,8 +17,10 @@ tags:
 
 　　更新完之后，webpack 2 兼容老版本的配置，所以直接运行是没有问题的。据说 webpack 2 的 **tree-shaking** 还可以优化体积。  
 
-##迁移
-***
+<!-- more -->
+
+## 迁移
+
 　　去webpack官网扫了一眼，虽然v2兼容v1的，但v2修改了配置文件的语法。  
 [https://webpack.js.org/guides/migrating/](https://webpack.js.org/guides/migrating/)
 
@@ -77,8 +79,8 @@ resolveLoader: {
 
 　　愉快的改好`webpack.config.js`，接下来开始曲折的趟坑之旅。
 
-##蹚坑
-***
+## 蹚坑
+
 　　满心欢喜的build一发。
 ```nohighlight
 $ npm run build
@@ -267,8 +269,8 @@ approve.js.map  190 kB       3  [emitted]  approve
 
 　　老哥，稳。
 
-##后记
-***
+## 后记
+
 　　台上一分钟，台下十年功，博客写的6，其实找问题的时候真的想疯。然后，不看 github 真是太傻了，下次遇到问题一定要到全球最大的同性交友平台问问！   
 [https://github.com/shama/webpack-stream/issues/125](https://github.com/shama/webpack-stream/issues/125)
 

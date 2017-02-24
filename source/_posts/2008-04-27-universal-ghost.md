@@ -8,11 +8,15 @@ tags:
 
 　　这个版本，有了较大改变，首先是支持双硬盘了(感谢skyfree)，其次是添加了手工GHOST的选项。在界面上有部分修改。
 
+<!-- more -->
+
 程序制作：JS   
 完成日期：2008年4月27日  
 内置GHOST版本：V11.0.2.1575   
 Email：297259024@qq.com
 QQ:297259024
+
+![](/2008-04-27-universal-ghost/universal-ghost.gif)
 {% asset_img universal-ghost.gif universal-ghost %}
 
 

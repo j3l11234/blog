@@ -8,8 +8,11 @@ tags:
 ╮(╯_╰)╭  
  貌似最近，愚公移山2出来了呢，百度了半天都没有破解内购的，于是心血来潮。。。。
 
+
 国际惯例。。反编译  
 {% asset_img ygys-crack_1.jpg ygys-crack_1 %}
+
+<!-- more -->
 
 发现了3大运营商的内购sdk，分别是电信，联通，移动。  
 {% asset_img ygys-crack_2.jpg ygys-crack_2 %}
