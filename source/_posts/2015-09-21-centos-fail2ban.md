@@ -1,7 +1,7 @@
 ---
 title: CentOS下fail2ban安装与配置教程
 date: 2015-09-21 02:34:16
-updated: 2015-09-21 02:34:16
+updated: 2017-04-20 10:06:00
 tags:
 ---
 ## 介绍
@@ -110,6 +110,30 @@ enabled = true
 ```
 chkconfig fail2ban on
 service fail2ban start
+```
+
+## CentOS7的补充说明
+在CentOS7下可能会出现类似错误
+```
+2017-04-19 10:19:30,335 fail2ban.action         [526]: ERROR   ipset create fail2ban-sshd hash:ip timeout 600
+firewall-cmd --direct --add-rule ipv4 filter INPUT 0 -p tcp -m multiport --dports ssh -m set --match-set fail2ban-sshd src -j REJECT --reject-with icmp-port-unreachable -- stdout: ''
+2017-04-19 10:19:30,335 fail2ban.action         [526]: ERROR   ipset create fail2ban-sshd hash:ip timeout 600
+firewall-cmd --direct --add-rule ipv4 filter INPUT 0 -p tcp -m multiport --dports ssh -m set --match-set fail2ban-sshd src -j REJECT --reject-with icmp-port-unreachable -- stderr: 'ipset v6.19: Cannot open session to kernel.\n\x1b[91mFirewallD is not running\x1b[00m\n'
+2017-04-19 10:19:30,336 fail2ban.action         [526]: ERROR   ipset create fail2ban-sshd hash:ip timeout 600
+firewall-cmd --direct --add-rule ipv4 filter INPUT 0 -p tcp -m multiport --dports ssh -m set --match-set fail2ban-sshd src -j REJECT --reject-with icmp-port-unreachable -- killed with signal 124 (return code: 252)
+2017-04-19 10:19:30,336 fail2ban.actions        [526]: ERROR   Failed to start jail 'sshd' action 'firewallcmd-ipset': Error starting action
+……
+2017-04-19 10:19:41,529 fail2ban.action         [526]: ERROR   ipset add fail2ban-sshd 116.31.116.14 timeout 600 -exist -- stdout: ''
+2017-04-19 10:19:41,530 fail2ban.action         [526]: ERROR   ipset add fail2ban-sshd 116.31.116.14 timeout 600 -exist -- stderr: 'ipset v6.19: Cannot open session to kernel.\n'
+2017-04-19 10:19:41,530 fail2ban.action         [526]: ERROR   ipset add fail2ban-sshd 116.31.116.14 timeout 600 -exist -- returned 1
+2017-04-19 10:19:41,531 fail2ban.actions        [526]: ERROR   Failed to execute ban jail 'sshd' action 'firewallcmd-ipset' info 'CallingMap({'ipjailmatches': <function <lambda> at 0xb08578>, 'matches': '[……]', 'ip': '116.31.116.14', 'ipmatches': <function <lambda> at 0xb08410>, 'ipfailures': <function <lambda> at 0xb086e0>, 'time': 1492568381.402617, 'failures': 40, 'ipjailfailures': <function <lambda> at 0xb08500>})': Error banning 116.31.116.14
+```
+CentOS7使用了firewall作为默认防火墙，而fail2ban默认使用`firewallcmd-ipset`作为封禁动作，但是在基于openvz的vps平台上是不能调用ipset的，所以需要做一些更改。  
+更改`/etc/fail2ban/jail.d/00-firewalld.conf`文件，将其更改为使用`firewallcmd-new`
+```
+[DEFAULT]
+#banaction = firewallcmd-ipset
+banaction = firewallcmd-new
 ```
 
 

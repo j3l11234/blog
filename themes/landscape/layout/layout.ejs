@@ -14,5 +14,15 @@
     <%- partial('_partial/mobile-nav', null, {cache: !config.relative_link}) %>
     <%- partial('_partial/after-footer') %>
   </div>
+  <script type="text/javascript">
+    window._mfq = window._mfq || [];
+    (function() {
+        var mf = document.createElement("script");
+        mf.type = "text/javascript"; mf.async = true;
+        mf.src = "//cdn.mouseflow.com/projects/7df30213-a6aa-42f1-a85a-1676fde88c44.js";
+        document.getElementsByTagName("head")[0].appendChild(mf);
+    })();
+</script>
+  
 </body>
 </html>

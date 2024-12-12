@@ -9,6 +9,7 @@ description:
 author: j3l11234
 language: zh-CN
 timezone: Asia/Shanghai
+keywords: j3l11234,HTML5,JavaScript,React
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -64,12 +65,14 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: landscape
+sitemap:
+    path: sitemap.xml
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/j3l11234/j3l11234.github.io.git
+  repo: git@github.com:j3l11234/j3l11234.github.io.git
   branch: master
 
 #DuoShuo

@@ -10,6 +10,8 @@ tags:
 
 例如`http://localhost/aaa`则访问站点a，`http://localhost/bbb`则访问站点b，`http://localhost/aaa/ccc`则访问站点c
 
+<!-- more -->
+
 ## 真正的Vhost
 
 真正意义上Vhost，是使用域名作为区分。也就是`server_name`字段。这类配置方式广为人知。
